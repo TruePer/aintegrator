@@ -1,0 +1,6 @@
+[submodule "Sources/AIntegrator/Ai_Kernel/Protocol/proto"]
+	path = Sources/AIntegrator/Ai_Kernel/Protocol/proto
+	url = https://github.com/TruePer/AiProtocol.git
+[submodule "External/QmlMaterial"]
+	path = External/QmlMaterial
+	url = https://github.com/TruePer/QmlMaterial.git
