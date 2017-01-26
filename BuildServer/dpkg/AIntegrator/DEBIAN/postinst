@@ -1,0 +1,18 @@
+#!/bin/sh
+
+ldconfig
+
+for UserHome in /home/*
+do
+	Destination=$UserHome/.fly/startmenu/applications/others
+	if [ -d $Destination ]; then
+		user=`basename $UserHome`
+		cp -fr /tmp/AIntegrator.desktop $Destination
+		chown $user:$user $Destination/AIntegrator.desktop
+		chmod 644 $Destination/AIntegrator.desktop
+	fi
+done
+
+rm -f /tmp/AIntegrator.desktop
+
+exit 0

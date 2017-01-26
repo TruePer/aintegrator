@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Файл настроек запускаемого модуля для взаимодествия с А-Интегратором -->
+
+<!-- 
+Параметры запускаемого модуля 
+  version - версия протокола файла настроек
+  name    - имя поста, которое будет отображаться на ГИП Интегратора
+  id      - уникальный идентификатор запускаемого модуля, который используется при конфигурировании состава АРМ
+-->
+<execution_module version="1" name="Моё приложение v 1.2.3" id="my1">
+
+    <!--
+    ВременнЫе параметры
+    module_launch_delay_sec   - Время, которое отводится модулю на запуск и на установление соединения с Интегратором
+                         Если по истечении module_launch_delay_sec соединение не установлено, то считается, что запуск модуля совершен неудачно, о чем сообщается оператору
+    status_update_sec  - Интервал обновления статуса поста. Если по истечении status_update_sec статус поста не получен, считается, что пост работает некорректно
+                         Т.е. для корректной работы с Интегратором, запускаемому модулю необходимо обновлять статус поста не реже чем status_update_sec, даже если изменений не было
+    launch_interval_sec- Если указан launch_interval_sec, то между запускам процессов из launch_list проходит соответствующий временной интервал
+    -->
+    <timing_parameters
+        module_launch_delay_sec="20"
+        status_update_sec="5"
+        launch_interval_sec="2"
+    />
+
+    <!--
+    Список запуска процессов
+    Процессы запускаются последовательно в порядке перечисления в списке
+    -->
+    <launch_list>
+        <!--
+        Параметры запуска
+        path_to_executable - Путь к запускаемому файлу
+        command_options    - Параметры запуска
+        work_directory     - Рабочая директория
+        -->
+        <launch_parameters
+            path_to_executable="/opt/myapp/executable" 
+            command_options="--do_some_think --debug=true"
+            work_directory="/opt/myapp"
+        />
+
+        <launch_parameters
+            path_to_executable="/opt/myapp/otherexecutable" 
+            command_options=""
+            work_directory="/opt/myapp"
+        />
+    </launch_list>
+
+    <!-- 
+    Список карточек поста для отображения на ГИП Интегратора. 
+    Пока поддерживается один тип карточек
+    Возможные значения type: simple (Если не задано, то выставляется "simple")
+    Возможные значения background_color: red green blue lightblue yellow purple (Если не задано, то выставляется "lightblue")
+    -->
+    <card_list>
+        <card id="1" type="simple" background_color="red"/>
+    </card_list>
+
+    <!-- 
+    Список режимов работы
+    Используется для отображения списка режимов поста на ГИП Интегратора.
+    Если список пуст, то на ГИП Интегратора режимы работы не отображаются
+    -->
+    <work_mode_list>
+        <work_mode id="jam" name="Подавление"/>
+        <work_mode id="ree" name="Оценка РЭО"/>
+        <work_mode id="df" name="Пеленгование"/>
+    </work_mode_list>
+
+    <!-- 
+    Список настраиваемых статусных иконок, которые могут быть использованы запускаемым модулем для отображения статусов на ГИП Интегратора 
+    -->
+    <status_file_list>
+        <status_file id="1" path="/usr/share/icons/my_cool_icon.png"/>
+        <status_file id="2" path="/usr/share/icons/other_cool_icon.png"/>
+    </status_file_list>
+</execution_module>

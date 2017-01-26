@@ -1,0 +1,7 @@
+Package: aintegrator-mosquito-541
+Version: 0.1-4
+Maintainer: http://www.nppntt.ru
+Architecture: amd64
+Section: misc
+Description: Meta package for AIntegrator Mosquito 541 config file
+Depends: aintegrator (>=0.1-63)

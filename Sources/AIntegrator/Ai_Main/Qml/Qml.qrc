@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MainApplication.qml</file>
+        <file>Cards.qml</file>
+        <file>DndGrid.qml</file>
+        <file>CardState/SimpleCard.qml</file>
+        <file>CardState/StatusIcon.qml</file>
+        <file>WindowStateSaver.qml</file>
+        <file>LogConsole.qml</file>
+        <file>TooltipArea.qml</file>
+        <file>Parameters/ParameterItem.qml</file>
+        <file>Parameters/RightParametersSheet.qml</file>
+        <file>Parameters/RightSheet.qml</file>
+    </qresource>
+</RCC>

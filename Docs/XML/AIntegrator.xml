@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Файл, содержащий параметры соединения с А-Интегратором -->
+
+<!--
+Параметры А-Интегратора
+  ip_address - IP-адрес, по которому запускаемые модули должны подключаться к Интегратору
+  ip-port    - Номер IP-прота, который слушает Интегратор для установления соедниения
+-->
+<a_integrator ip_address="127.0.0.1" port="50200" name="Москит">
+    <!-- Параметры АРМ -->
+    <work_station name="АРМ-Ц">
+        <!-- Группа модулей, которые должны быть визуально объединены на ГИП Интегратора -->
+        <module_group>
+            <!-- Запускаемые модули, входящие в состав группы -->
+            <execution_module id="3gpp-gui" name="РЭО и воздействие на АТ"/>
+            <execution_module id="barion" name="Определение БС"/>
+            <execution_module id="rfpost" name="Дальномерный вычислитель"/>
+            <execution_module id="cell-net-uavvideo" name="Видео для БЛА"/>
+            <execution_module id="cell-net-gpsemulator" name="Искажение навиг. поля"/>
+            <execution_module id="aeromosaic" name="Работа с фото"/>
+        </module_group>
+    </work_station>
+    <work_station name="АРМ-Р">
+        <module_group>
+            <execution_module id="cell-net-uavvideo" name="Пеленгаторные нагрузки"/>
+            <execution_module id="afterwork" name="Результаты РР"/>
+            <execution_module id="fortis" name="Управление ЦН РР"/>
+        </module_group>
+    </work_station>
+    <work_station name="АРМ-Л">
+        <module_group>
+            <execution_module id="2dnpu-m" name="Пункт управления БЛА"/>
+            <execution_module id="ktr" name="Настройка канала связи"/>
+        </module_group>
+    </work_station>
+    <work_station name="АРМ-У">
+        <module_group>
+            <execution_module id="dmpost" name="Распоряжения и задачи"/>
+        </module_group>
+    </work_station>
+</a_integrator>

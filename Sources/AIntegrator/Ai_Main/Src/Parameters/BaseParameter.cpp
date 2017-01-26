@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// A-Integrator
+/// (c) 2016 - Denis Fatkulin - denis.fatkulin@gmail.com
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "BaseParameter.h"
+#include "CheckBoxParameter.h"
+#include "host/Ai_PostParameters.pb.h"
+
+
+using namespace ai::main;
+
+BaseParameter::BaseParameter(QObject* parent)
+    : QObject(parent)
+{
+}
+
